@@ -1,99 +1,47 @@
 #include<stdio.h>
 
-void main()
-
+int main()
 {
-
-    int count, i, mis[100], search, first, last, index, mid;
-
+    int count, i;
     printf("Binary Search");
-
-    printf("\nEnter the number of students: ");
-
-    scanf("%d",&count);
-
+    printf("\nEnter number of student: ");
+    scanf("%d", &count);
     
-
-    printf("\nEnter the MIS: ");
-
-    for(i = 0; i < count; i++)
-
+    int mis[count];
+    
+    for (i = 0; i < count; i++)
     {
-
+        printf("\nEnter MIS: ");
         scanf("%d",&mis[i]);
-
     }
-
     
-
+    int low, mid, high, index, search;
+    
     printf("\nEnter MIS to be searched: ");
-
     scanf("%d",&search);
-
     
-
-    first = 0;
-
-    last = count - 1;
-
-    mid = (first + last)/2;
-
-    index = -1;
-
-    while (first <= last)
-
+    low = 0;
+    high = count - 1;
+    printf("\n%d", high);
+    mid = (low + high)/2;
+    printf("\n%d",mid);
+    
+    while (low <= high)
     {
-
         if (mis[mid] == search)
-
         {
-
-            index = i;
-
+            index = mid;
             break;
-
-        }
-
-        else if (mis[mid] > search)
-
-        {
-
-            last = mid - 1;
-
-        }
-
-        else
-
-        {
-
-            first = mid + 1;
-
-        }
-
+        }    
     }
-
-    printf("%d", index);
+    
+    printf("\n");
+    for (i = 0; i < count; i++)
+    {
+        printf("%d ",mis[i]);
+    }
+    return 0;
+}
 
     
-
-    if (index != -1)
-
-    {
-
-        printf("\nMIS %d was present",search);
-
-        printf("\nIndex: %d",index);
-
-    }
-
-    else
-
-    {
-
-        printf("MIS %d was Absent",search);
-
-    }
-
-}   
-
     
