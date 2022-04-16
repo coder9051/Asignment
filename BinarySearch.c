@@ -38,10 +38,4 @@ int main()
     printf("\n");
     for (i = 0; i < count; i++)
     {
-        printf("%d ",mis[i]);
-    }
-    return 0;
-}
-
-    
-    
+        printf("%d ",mi
